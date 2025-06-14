@@ -19,9 +19,8 @@ class SomaConnectExplore(SomaApi):
         bat_mv = bat['battery_level'] if bat['result'] == 'success' else bat['msg']
         bat_pct = bat['battery_percentage'] if bat['result'] == 'success' else bat['msg']
 
-        n=datetime.now()
+        print( f"{datetime.now().isoformat(timespec="seconds")};{bat_mv/100};{bat_pct};{light_lvl}", flush=True)
 
-        print( f"{n.hour}:{n.minute}:{n.second};{bat_mv/100};{bat_pct};{light_lvl}", flush=True)
 
 
 if __name__ == '__main__':
